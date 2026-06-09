@@ -102,7 +102,8 @@ html,body{height:100%;overflow:hidden;}
 .notes-section textarea:focus{outline:none;border-color:var(--blue-light);background:#fff}
 
 /* ── ACTION ROW ── */
-.action-row{display:flex;gap:8px;flex-shrink:0;align-items:center}
+.action-row{display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
+.action-row-secondary{display:flex;gap:8px;align-items:center;}
 .btn-preview{padding:10px 16px;background:#fff;color:var(--blue-mid);border:2px solid var(--blue-mid);border-radius:var(--radius);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:all .14s;white-space:nowrap;}
 .btn-preview:hover{background:var(--blue-pale)}
 .btn-preview:disabled{opacity:.5;cursor:not-allowed}
@@ -201,7 +202,7 @@ html.is-mobile .hdr{padding:20px 0 8px!important;}
 html.is-mobile .hdr-icon{width:110px!important;height:110px!important;}
 html.is-mobile .hdr h1{font-size:26px!important;}
 html.is-mobile .hdr-inner{flex-direction:column!important;align-items:center!important;gap:10px!important;}
-html.is-mobile .tab-btn{font-size:13px!important;padding:12px 4px!important;min-height:48px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
+html.is-mobile .tab-btn{font-size:16px!important;padding:12px 4px!important;min-height:52px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
 html.is-mobile .card-title{font-size:16px!important;padding:11px 13px!important;}
 html.is-mobile .card-body{padding:13px!important;}
 html.is-mobile .top-inner{display:flex!important;flex-direction:column!important;gap:16px!important;padding:14px!important;width:100%!important;}
@@ -227,11 +228,11 @@ html.is-mobile .add-btn{font-size:16px!important;padding:14px 12px!important;min
 html.is-mobile .notes-section{padding:12px 14px 16px!important;}
 html.is-mobile .notes-section textarea{font-size:17px!important;padding:12px 13px!important;min-height:60px!important;max-height:none!important;-webkit-appearance:none!important;}
 html.is-mobile .action-row{display:flex!important;flex-direction:column!important;gap:10px!important;}
-html.is-mobile .action-row .btn-create{order:1!important;font-size:20px!important;padding:16px!important;min-height:60px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;width:100%!important;}
-html.is-mobile .action-row .btn-preview{order:2!important;flex:1!important;font-size:17px!important;padding:14px 12px!important;min-height:54px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
-html.is-mobile .action-row .btn-clear-main{order:2!important;flex:1!important;font-size:17px!important;padding:14px 12px!important;min-height:54px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
-html.is-mobile .action-row-secondary{display:flex!important;gap:10px!important;}
-html.is-mobile .status{width:100%!important;text-align:center!important;white-space:normal!important;order:3!important;}
+html.is-mobile .action-row .btn-create{font-size:20px!important;padding:16px!important;min-height:60px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;width:100%!important;flex:none!important;}
+html.is-mobile .action-row-secondary{display:flex!important;gap:10px!important;width:100%!important;}
+html.is-mobile .action-row-secondary .btn-preview{flex:1!important;font-size:17px!important;padding:14px 12px!important;min-height:54px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
+html.is-mobile .action-row-secondary .btn-clear-main{flex:1!important;font-size:17px!important;padding:14px 12px!important;min-height:54px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
+html.is-mobile .status{width:100%!important;text-align:center!important;white-space:normal!important;}
 html.is-mobile .result-links{flex-wrap:wrap!important;padding:12px 14px!important;}
 html.is-mobile .result-links a{font-size:15px!important;padding:12px 17px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;}
 html.is-mobile .topics-header{padding:12px!important;}
@@ -245,8 +246,8 @@ html.is-mobile .topic-item input[type=checkbox]{width:24px!important;height:24px
 html.is-mobile .topic-move-btn{font-size:18px!important;min-width:44px!important;min-height:44px!important;-webkit-tap-highlight-color:transparent!important;}
 html.is-mobile .topic-del-btn{font-size:22px!important;min-width:44px!important;min-height:44px!important;-webkit-tap-highlight-color:transparent!important;}
 html.is-mobile .topics-actions{gap:10px!important;padding:12px!important;}
-html.is-mobile .btn-transfer{font-size:16px!important;padding:14px!important;min-height:54px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
-html.is-mobile .btn-export-inv{font-size:16px!important;padding:14px!important;min-height:54px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
+html.is-mobile .btn-transfer{font-size:15px!important;padding:12px 10px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
+html.is-mobile .btn-export-inv{font-size:15px!important;padding:12px 10px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
 html.is-mobile .search-box{gap:8px!important;}
 html.is-mobile .search-box input{font-size:17px!important;padding:12px 13px!important;min-height:50px!important;-webkit-appearance:none!important;}
 html.is-mobile .search-box button{font-size:15px!important;padding:12px 18px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;}
@@ -338,8 +339,10 @@ html.is-mobile .toast{font-size:15px!important;padding:12px 24px!important;botto
 
     <div class="action-row">
       <button class="btn-create" id="genBtn" onclick="showDialog('createProtocol','הפרוטוקול ייצור Google Doc ו־PDF ב־Drive. להמשיך?','כן, צור')">💾 צור פרוטוקול סופי</button>
-      <button class="btn-preview" id="prevBtn" onclick="createPreview()">👁 תצוגה מקדימה</button>
-      <button class="btn-clear-main" onclick="showDialog('clearAll','לנקות הכל ולפתוח פרוטוקול חדש? הטיוטה תימחק.','נקה הכל','danger')">🗑 נקה הכל</button>
+      <div class="action-row-secondary">
+        <button class="btn-preview" id="prevBtn" onclick="createPreview()">👁 תצוגה מקדימה</button>
+        <button class="btn-clear-main" onclick="showDialog('clearAll','לנקות הכל ולפתוח פרוטוקול חדש? הטיוטה תימחק.','נקה הכל','danger')">🗑 נקה הכל</button>
+      </div>
       <div class="status" id="status"></div>
     </div>
 
@@ -364,6 +367,7 @@ html.is-mobile .toast{font-size:15px!important;padding:12px 24px!important;botto
       <div class="topics-actions">
         <button class="btn-transfer" onclick="transferTopics()">📝 העבר מסומנים לפרוטוקול חדש</button>
         <button class="btn-export-inv" id="exportInvBtn" onclick="exportInvitation()">📄 ייצא הזמנה לישיבה</button>
+        <button class="btn-preview" id="prevInvBtn" onclick="previewInvitation()" style="min-width:120px;">👁 תצוגה מקדימה</button>
       </div>
     </div>
   </div>
@@ -1038,6 +1042,41 @@ function getProtocolData() {
     notes:   document.getElementById('generalNotes').value,
     present: present, absent: absent, agenda: agenda
   };
+}
+
+// ══════════════════════════════════════════════
+//  PREVIEW INVITATION
+// ══════════════════════════════════════════════
+async function previewInvitation() {
+  var checked = (topicsData.topics||[]).filter(function(t){return t.checked;});
+  if (!checked.length) { showToast('יש לסמן נושאים לתצוגה מקדימה'); return; }
+  var d = topicsData.date;
+  if (!d) { showToast('יש להזין תאריך ישיבה'); return; }
+
+  var btn = document.getElementById('prevInvBtn');
+  btn.disabled = true; btn.innerHTML = '⏳<span class="spinner"></span>';
+
+  try {
+    var dateHeb = formatDateHeb(d);
+    var topicsText = checked.map(function(t,i){ return (i+1)+'. '+(t.text||''); }).join('
+');
+
+    var docId = await buildDoc({
+      docName: 'תצוגה_הזמנה_'+dateHeb, dateHeb: dateHeb,
+      title: 'הזמנה לישיבה ועדת חזות היישוב'
+    }, TEMPLATES.invitation, [
+      replaceTextReq('{{AGENDA_HEADER}}', 'נושאים לדיון'),
+      replaceTextReq('{{AGENDA_ITEMS}}', topicsText)
+    ]);
+
+    window.open('https://docs.google.com/document/d/'+docId+'/edit', '_blank');
+    showToast('תצוגה מקדימה נוצרה ✓');
+    // Delete after 15 min
+    setTimeout(function(){ driveDelete(docId).catch(function(){}); }, 900000);
+  } catch(e) {
+    showToast('שגיאה: '+e.message);
+  }
+  btn.disabled = false; btn.innerHTML = '👁 תצוגה מקדימה';
 }
 
 // ══════════════════════════════════════════════
