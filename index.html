@@ -1058,8 +1058,7 @@ async function previewInvitation() {
 
   try {
     var dateHeb = formatDateHeb(d);
-    var topicsText = checked.map(function(t,i){ return (i+1)+'. '+(t.text||''); }).join('
-');
+    var topicsText = checked.map(function(t,i){ return (i+1)+'. '+(t.text||''); }).join('\n');
 
     var docId = await buildDoc({
       docName: 'תצוגה_הזמנה_'+dateHeb, dateHeb: dateHeb,
