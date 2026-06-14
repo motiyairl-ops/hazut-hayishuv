@@ -133,21 +133,24 @@ html,body{height:100%;overflow:hidden;}
 .topics-scroll{flex:1;overflow-y:auto;padding:8px 12px;}
 .topics-scroll::-webkit-scrollbar{width:4px}
 .topics-scroll::-webkit-scrollbar-thumb{background:var(--blue-border);border-radius:99px}
-.topic-item{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--blue-pale);border:1.5px solid var(--blue-border);border-radius:8px;margin-bottom:6px;}
+.topic-item{background:var(--blue-pale);border:1.5px solid var(--blue-border);border-radius:8px;padding:6px 9px;margin-bottom:6px;}
+.topic-item-header{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
 .topic-item input[type=checkbox]{width:18px;height:18px;cursor:pointer;accent-color:var(--blue-mid);flex-shrink:0;}
-.topic-text{flex:1;font-size:14px;font-weight:500;color:var(--text);border:none;background:transparent;font-family:inherit;direction:rtl;padding:2px 4px;border-radius:4px;min-height:24px;}
-.topic-text:focus{outline:1.5px solid var(--blue-light);background:#fff;border-radius:4px;}
+.topic-text{flex:1;font-size:14px;font-weight:700;color:var(--text);border:1.5px solid #A5D6A7;background:#F1F8E9;font-family:inherit;direction:rtl;padding:5px 8px;border-radius:6px;min-height:34px;line-height:1.4;}
+.topic-text:focus{outline:none;border-color:#81C784;background:#fff;}
 .topic-text.checked{text-decoration:line-through;color:var(--text-muted);}
+.topic-item-controls{display:flex;align-items:center;gap:4px;}
 .topic-move-btn{background:none;border:none;cursor:pointer;color:#90A4AE;font-size:13px;padding:2px 4px;line-height:1;border-radius:4px;transition:color .12s;flex-shrink:0;}
 .topic-move-btn:hover{color:#1a2340;background:#e8edf4}
 .topic-move-btn:disabled{opacity:0.2;cursor:default}
-.topic-del-btn{background:none;border:none;cursor:pointer;color:#ef9a9a;font-size:15px;padding:2px 5px;transition:color .12s;line-height:1;border-radius:4px;flex-shrink:0;}
+.topic-del-btn{background:none;border:none;cursor:pointer;color:#ef9a9a;font-size:15px;padding:2px 5px;transition:color .12s;line-height:1;border-radius:4px;flex-shrink:0;margin-right:auto;}
 .topic-del-btn:hover{color:#c62828;background:#ffebee}
-.topics-actions{display:flex;gap:8px;padding:8px 12px;border-top:1px solid var(--blue-border);flex-shrink:0;flex-wrap:wrap;}
-.btn-transfer{flex:1;padding:10px;background:var(--blue-mid);color:#fff;border:none;border-radius:var(--radius);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .14s;min-width:140px;}
+.topics-actions{display:flex;flex-direction:column;gap:8px;padding:8px 12px;border-top:1px solid var(--blue-border);flex-shrink:0;}
+.topics-actions-secondary{display:flex;gap:8px;}
+.btn-transfer{width:100%;padding:10px;background:var(--blue-mid);color:#fff;border:none;border-radius:var(--radius);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .14s;}
 .btn-transfer:hover{background:var(--blue-dark)}
 .btn-transfer:disabled{background:#94a3b8;cursor:not-allowed}
-.btn-export-inv{padding:10px 16px;background:#fff;color:var(--blue-mid);border:2px solid var(--blue-mid);border-radius:var(--radius);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:all .14s;min-width:120px;}
+.btn-export-inv{flex:1;padding:10px 16px;background:#fff;color:var(--blue-mid);border:2px solid var(--blue-mid);border-radius:var(--radius);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:all .14s;}
 .btn-export-inv:hover{background:var(--blue-pale)}
 .btn-export-inv:disabled{opacity:.5;cursor:not-allowed}
 
@@ -240,14 +243,18 @@ html.is-mobile .topics-date-field{width:100%!important;}
 html.is-mobile .topics-date-field label{font-size:14px!important;}
 html.is-mobile .topics-date-field input[type=date]{flex:1!important;font-size:17px!important;padding:12px 13px!important;min-height:50px!important;-webkit-appearance:none!important;}
 html.is-mobile .topics-scroll{padding:10px 12px!important;}
-html.is-mobile .topic-item{padding:12px!important;min-height:56px!important;gap:10px!important;}
-html.is-mobile .topic-text{font-size:16px!important;min-height:32px!important;}
-html.is-mobile .topic-item input[type=checkbox]{width:24px!important;height:24px!important;}
-html.is-mobile .topic-move-btn{font-size:18px!important;min-width:44px!important;min-height:44px!important;-webkit-tap-highlight-color:transparent!important;}
-html.is-mobile .topic-del-btn{font-size:22px!important;min-width:44px!important;min-height:44px!important;-webkit-tap-highlight-color:transparent!important;}
+html.is-mobile .topic-item{padding:12px!important;margin-bottom:12px!important;}
+html.is-mobile .topic-item-header{gap:8px!important;margin-bottom:6px!important;}
+html.is-mobile .topic-text{font-size:17px!important;padding:10px 12px!important;min-height:46px!important;-webkit-appearance:none!important;}
+html.is-mobile .topic-item input[type=checkbox]{width:26px!important;height:26px!important;}
+html.is-mobile .topic-item-controls{gap:6px!important;}
+html.is-mobile .topic-move-btn{font-size:18px!important;min-width:44px!important;min-height:44px!important;background:#f5f5f5!important;border-radius:8px!important;border:1px solid #e0e0e0!important;-webkit-tap-highlight-color:transparent!important;}
+html.is-mobile .topic-del-btn{font-size:20px!important;min-width:44px!important;min-height:44px!important;color:#e57373!important;background:#fff5f5!important;border-radius:8px!important;border:1px solid #ffcdd2!important;-webkit-tap-highlight-color:transparent!important;}
 html.is-mobile .topics-actions{gap:10px!important;padding:12px!important;}
-html.is-mobile .btn-transfer{font-size:15px!important;padding:12px 10px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
+html.is-mobile .topics-actions-secondary{gap:10px!important;}
+html.is-mobile .btn-transfer{font-size:18px!important;padding:14px!important;min-height:56px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
 html.is-mobile .btn-export-inv{font-size:15px!important;padding:12px 10px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
+html.is-mobile .topics-actions-secondary .btn-preview{flex:1!important;font-size:15px!important;padding:12px 10px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;touch-action:manipulation!important;}
 html.is-mobile .search-box{gap:8px!important;}
 html.is-mobile .search-box input{font-size:17px!important;padding:12px 13px!important;min-height:50px!important;-webkit-appearance:none!important;}
 html.is-mobile .search-box button{font-size:15px!important;padding:12px 18px!important;min-height:50px!important;-webkit-tap-highlight-color:transparent!important;}
@@ -366,8 +373,10 @@ html.is-mobile .toast{font-size:15px!important;padding:12px 24px!important;botto
       <button class="add-btn" style="margin:0 12px 6px;width:calc(100% - 24px);" onclick="addTopicItem()">＋ הוסף נושא חדש</button>
       <div class="topics-actions">
         <button class="btn-transfer" onclick="transferTopics()">📝 העבר מסומנים לפרוטוקול חדש</button>
-        <button class="btn-export-inv" id="exportInvBtn" onclick="exportInvitation()">📄 ייצא הזמנה לישיבה</button>
-        <button class="btn-preview" id="prevInvBtn" onclick="previewInvitation()" style="min-width:120px;">👁 תצוגה מקדימה</button>
+        <div class="topics-actions-secondary">
+          <button class="btn-export-inv" id="exportInvBtn" onclick="exportInvitation()">📄 ייצא הזמנה לישיבה</button>
+          <button class="btn-preview" id="prevInvBtn" onclick="previewInvitation()">👁 תצוגה מקדימה</button>
+        </div>
       </div>
     </div>
   </div>
@@ -722,6 +731,9 @@ function buildTopicEl(t, i, total) {
   var div = document.createElement('div');
   div.className = 'topic-item';
 
+  var header = document.createElement('div');
+  header.className = 'topic-item-header';
+
   var cb = document.createElement('input');
   cb.type = 'checkbox';
   cb.checked = !!t.checked;
@@ -742,32 +754,41 @@ function buildTopicEl(t, i, total) {
     saveTopicsData();
   };
 
+  header.appendChild(cb);
+  header.appendChild(inp);
+
+  var ctrl = document.createElement('div');
+  ctrl.className = 'topic-item-controls';
+
   var upBtn = document.createElement('button');
   upBtn.className = 'topic-move-btn';
   upBtn.textContent = '▲';
+  upBtn.title = 'הזז למעלה';
   upBtn.disabled = i === 0;
   upBtn.onclick = function() { moveTopic(i, -1); };
 
   var downBtn = document.createElement('button');
   downBtn.className = 'topic-move-btn';
   downBtn.textContent = '▼';
+  downBtn.title = 'הזז למטה';
   downBtn.disabled = i === total - 1;
   downBtn.onclick = function() { moveTopic(i, 1); };
 
   var delBtn = document.createElement('button');
   delBtn.className = 'topic-del-btn';
   delBtn.textContent = '✕';
+  delBtn.title = 'הסר נושא';
   delBtn.onclick = function() {
     topicsData.topics.splice(i, 1);
     renderTopics();
     saveTopicsData();
   };
 
-  div.appendChild(cb);
-  div.appendChild(inp);
-  div.appendChild(upBtn);
-  div.appendChild(downBtn);
-  div.appendChild(delBtn);
+  div.appendChild(header);
+  ctrl.appendChild(upBtn);
+  ctrl.appendChild(downBtn);
+  ctrl.appendChild(delBtn);
+  div.appendChild(ctrl);
   return div;
 }
 
